@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Create or access your CapTech shopping account.">
+  <title>CapTech | Account</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero">
+    <div class="card">
+      <div class="navbar">
+        <h1><span><img src="download (41).jpeg" alt="captech logo" class="nav-logo"><br>CapTech</h1>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About us</a></li>
+          <li><a href="index.html#deals">Deals</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+      </div><br><br><br><br><br><br>
+      <div class="form">
+        <h2 class="letter" id="formTitle">Create an account</h2>
+        <form id="accountForm" novalidate>
+          <input id="accountEmail" type="email" autocomplete="email" placeholder="Enter email address" aria-label="Email address" required>
+          <input id="accountPassword" type="password" autocomplete="new-password" placeholder="Create password (8+ characters)" aria-label="Password" required>
+          <input id="confirmPassword" type="password" autocomplete="new-password" placeholder="Confirm password" aria-label="Confirm password">
+          <button class="btnn" id="submitButton" type="submit">Create Account</button>
+          <p id="accountFeedback" role="status" aria-live="polite" style="color:#fff;font-size:13px;line-height:1.5;margin-top:12px;"></p>
+        </form>
+        <p class="link" style="color:#fff;"> <span id="switchPrompt">Already have an account?</span>
+          <a href="#" id="switchMode">Sign in</a>
+        </p>
+      </div>
+      <div class="main-img">
+        <img src="images - 2026-11-01T202731.649.jpeg" class="shoping-img" alt="CapTech featured shopping products">
+      </div>
+    </div>
+  </section>
+<script>
+(() => {
+  const form = document.getElementById('accountForm');
+  const emailInput = document.getElementById('accountEmail');
+  const passwordInput = document.getElementById('accountPassword');
+  const confirmInput = document.getElementById('confirmPassword');
+  const feedback = document.getElementById('accountFeedback');
+  const title = document.getElementById('formTitle');
+  const submit = document.getElementById('submitButton');
+  const switchPrompt = document.getElementById('switchPrompt');
+  const switchMode = document.getElementById('switchMode');
+  let mode = 'signup';
+  const STORAGE_KEY = 'captech_accounts_v1';
+  const encoder = new TextEncoder();
+
+  function accounts() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); }
+    catch { return {}; }
+  }
+  function setMode(next) {
+    mode = next;
+    const signup = mode === 'signup';
+    title.textContent = signup ? 'Create an account' : 'Welcome back';
+    submit.textContent = signup ? 'Create Account' : 'Login';
+    passwordInput.placeholder = signup ? 'Create password (8+ characters)' : 'Enter password';
+    passwordInput.autocomplete = signup ? 'new-password' : 'current-password';
+    confirmInput.hidden = !signup;
+    confirmInput.required = signup;
+    confirmInput.value = '';
+    switchPrompt.textContent = signup ? 'Already have an account?' : "Don't have an account?";
+    switchMode.textContent = signup ? 'Sign in' : 'Create one';
+    feedback.textContent = '';
+  }
+  function toBase64(bytes) {
+    return btoa(String.fromCharCode(...new Uint8Array(bytes)));
+  }
+  async function hashPassword(password, salt) {
+    const key = await crypto.subtle.importKey('raw', encoder.encode(password), 'PBKDF2', false, ['deriveBits']);
+    const bits = await crypto.subtle.deriveBits({name:'PBKDF2', salt, iterations:150000, hash:'SHA-256'}, key, 256);
+    return toBase64(bits);
+  }
+  function randomSalt() {
+    const bytes = crypto.getRandomValues(new Uint8Array(16));
+    return toBase64(bytes);
+  }
+  switchMode.addEventListener('click', event => {
+    event.preventDefault();
+    setMode(mode === 'signup' ? 'login' : 'signup');
+  });
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    const email = emailInput.value.trim().toLowerCase();
+    const password = passwordInput.value;
+    const confirm = confirmInput.value;
+    if (!email || !emailInput.checkValidity()) {
+      feedback.textContent = 'Please enter a valid email address.'; emailInput.focus(); return;
+    }
+    if (password.length < 8) {
+      feedback.textContent = 'Your password must contain at least 8 characters.'; passwordInput.focus(); return;
+    }
+    const saved = accounts();
+    submit.disabled = true;
+    try {
+      if (mode === 'signup') {
+        if (saved[email]) { feedback.textContent = 'An account with this email already exists. Please sign in.'; return; }
+        if (password !== confirm) { feedback.textContent = 'The passwords do not match.'; confirmInput.focus(); return; }
+        const salt = randomSalt();
+        saved[email] = {salt, passwordHash: await hashPassword(password, Uint8Array.from(atob(salt), c => c.charCodeAt(0))), createdAt: new Date().toISOString()};
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
+      } else {
+        if (!saved[email]) { feedback.textContent = 'No saved account was found for this email. Please create an account first.'; return; }
+        const record = saved[email];
+        const actual = await hashPassword(password, Uint8Array.from(atob(record.salt), c => c.charCodeAt(0)));
+        if (actual !== record.passwordHash) { feedback.textContent = 'Incorrect password. Please try again.'; return; }
+      }
+      sessionStorage.setItem('captech_signed_in', email);
+      feedback.textContent = 'Account verified. Opening the shop...';
+      window.location.replace('shop.html');
+    } catch (error) {
+      feedback.textContent = 'Your browser could not save the account. Please use a modern browser with site storage enabled.';
+    } finally {
+      submit.disabled = false;
+    }
+  });
+  // Return signed-in visitors directly to the shop.
+  if (sessionStorage.getItem('captech_signed_in')) window.location.replace('shop.html');
+  setMode('signup');
+})();
+</script>
+</body>
+</html>

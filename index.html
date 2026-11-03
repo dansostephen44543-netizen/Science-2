@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CapTech online shopping - discover quality products and great deals.">
+  <title>CapTech | Shop Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero" id="home">
+    <div class="card">
+      <div class="navbar">
+        <h1><img src="download (41).jpeg" alt="CapTech logo" class="nav-logo"><br>CapTech</h1>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#deals">Deals</a></li>
+            <li><a href="#contact">Contact</a></li><br><br>
+          </ul>
+        </nav>
+      </div><br><br><br><br><br>
+
+      <div class="left-panel">
+        <p class="tag">#1 WELCOME TO CapTech</p>
+        <h2>
+          Shop Online &amp;<br>
+          <span class="new">Get Free Discount</span><br>
+          <span class="no">&amp; Bonuses</span>
+        </h2>
+        <p class="man">"Shop Smart, Shop Easy! Discover amazing deals on<br>
+          quality products at affordable prices, enjoy<br>
+          convenient online shopping, and have your favourite items<br>
+          delivered right to your doorstep. Shop today and experience the difference!"</p>
+        <a href="login.html"><button class="btn" type="button">Sign in</button></a>
+      </div>
+
+      <div class="main-img">
+        <img src="download (42).jpeg" class="shoping-img" alt="CapTech featured shopping products">
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="content-section about-section" id="about">
+      <div class="section-inner">
+        <p class="section-kicker">GET TO KNOW US</p>
+        <h2 class="section-title">About CapTech</h2>
+        <p class="section-intro">CapTech is an online shopping destination created to make finding and buying everyday products simple and convenient.</p>
+        <div class="about-grid">
+          <article class="info-card">
+            <h3>Our Mission</h3>
+            <p>To make shopping easier by bringing a variety of products and useful offers together in one place.</p>
+          </article>
+          <article class="info-card">
+            <h3>Our Promise</h3>
+            <p>We aim to provide a smooth shopping experience, clear product information and helpful customer support.</p>
+          </article>
+          <article class="info-card">
+            <h3>Shop with Ease</h3>
+            <p>Explore products, discover deals and use your CapTech account to continue your shopping journey.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section deals-section" id="deals">
+      <div class="section-inner">
+        <p class="section-kicker">SAVE MORE</p>
+        <h2 class="section-title">Latest Deals</h2>
+        <p class="section-intro">Explore the offers available in our store. Sign in to browse products and check current prices.</p>
+        <div class="deals-grid">
+          <article class="deal-card">
+            <span class="deal-label">SPECIAL OFFER</span>
+            <h3>Everyday Essentials</h3>
+            <p>Find useful everyday items in one convenient place.</p>
+            <a href="login.html" class="deal-link">Explore products →</a>
+          </article>
+          <article class="deal-card">
+            <span class="deal-label">SHOP SMART</span>
+            <h3>Tech &amp; Accessories</h3>
+            <p>Discover gadgets and accessories for work, school and home.</p>
+            <a href="login.html" class="deal-link">Explore products →</a>
+          </article>
+          <article class="deal-card">
+            <span class="deal-label">MORE TO DISCOVER</span>
+            <h3>Featured Collections</h3>
+            <p>Browse different product categories and find something you need.</p>
+            <a href="login.html" class="deal-link">Explore products →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section contact-section" id="contact">
+      <div class="section-inner contact-layout">
+        <div>
+          <p class="section-kicker">WE'RE HERE TO HELP</p>
+          <h2 class="section-title">Contact Us</h2>
+          <p class="section-intro">Have a question about shopping or an order? Send us a message using the form.</p>
+          <p class="contact-note">When you submit, your device will open its email app with your message ready to send.</p>
+          <p class="contact-note">Owner support: <a href="mailto:dansostephen44543@gmail.com">dansostephen44543@gmail.com</a></p>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <label for="contactName">Your name</label>
+          <input id="contactName" name="name" type="text" placeholder="Enter your name" required>
+          <label for="contactEmail">Your email</label>
+          <input id="contactEmail" name="email" type="email" placeholder="Enter your email" required>
+          <label for="contactMessage">Message</label>
+          <textarea id="contactMessage" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+          <button class="btn contact-submit" type="submit">Prepare Message</button>
+          <p class="form-feedback" id="formFeedback" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <h2>CapTech</h2>
+        <p>Shop Smart, Shop Easy.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#deals">Deals</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="login.html">Sign in / Shop</a></li>
+        </ul>
+      </div>
+      <p class="copyright">© <span id="year"></span> CapTech. All rights reserved. call us on +233509640565</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+      const name = document.getElementById("contactName").value.trim();
+      const emailField = document.getElementById("contactEmail");
+      const email = emailField.value.trim();
+      const message = document.getElementById("contactMessage").value.trim();
+      const feedback = document.getElementById("formFeedback");
+
+      if (!name || !email || !message) {
+        feedback.textContent = "Please complete all fields before preparing your message.";
+        return;
+      }
+      if (!emailField.checkValidity()) {
+        feedback.textContent = "Please enter a valid email address.";
+        emailField.focus();
+        return;
+      }
+
+      const subject = encodeURIComponent("CapTech website enquiry");
+      const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
+      feedback.textContent = "Opening your email app with your enquiry addressed to CapTech.";
+      window.location.href = "mailto:dansostephen44543@gmail.com?subject=" + subject + "&body=" + body;
+    });
+  </script>
+</body>
+</html>

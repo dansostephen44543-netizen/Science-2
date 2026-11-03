@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse electronics, clothing and accessories at CapTech.">
+  <title>CapTech | Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section class="hero" id="home">
+    <div class="card">
+      <div class="navbar">
+        <button class="captech-menu-toggle" id="menuToggle" type="button" aria-label="Open shopping menu" aria-expanded="false">Menu</button>
+        <h1><img src="download (41).jpeg" alt="CapTech logo" class="nav-logo"><br>CapTech</h1>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#deals">Deals</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li><a href="#cart" aria-label="Shopping cart">Cart (<span id="cartCount">0</span>)</a></li>
+            <li><a href="#" id="signOutLink">Sign out</a></li>
+          </ul>
+        </nav><br><br>
+      </div><br><br><br><br><br><br>
+      <div class="left-panel">
+        <p class="tag">CAPTECH ONLINE STORE</p>
+        <h2>Find What<br><span class="new">You Need</span></h2>
+        <p class="man">Browse our available products, search by name, and add items to your cart.</p>
+        <a href="#products"><button class="btn" type="button">Start Shopping</button></a>
+      </div>
+      <div class="main-img">
+        <img src="hero.jpg" class="shoping-img" alt="CapTech shopping collection">
+      </div>
+    </div>
+  </section>
+
+  <div class="captech-promo-strip"><strong>CAPTECH SPECIALS</strong><span>Discover new finds, save favourites and build your cart.</span><span class="captech-countdown-label">Daily offers refresh in <b id="dealCountdown">--:--:--</b></span></div>
+  <div class="captech-drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="captech-sidebar" id="shopSidebar" aria-label="Shopping menu" aria-hidden="true">
+    <div class="captech-sidebar-head"><div><small>WELCOME TO</small><h2>CapTech</h2></div><button type="button" id="menuClose" aria-label="Close menu">×</button></div>
+    <p class="captech-sidebar-user" id="sidebarUser">Your shopping space</p>
+    <nav class="captech-side-nav">
+      <a href="#home" data-close-drawer><span>Home</span></a>
+      <a href="#products" data-close-drawer><span>All products</span></a>
+      <button type="button" data-side-category="Electronics"><span>Electronics</span></button>
+      <button type="button" data-side-category="Clothes"><span>Clothes</span></button>
+      <button type="button" data-side-category="Accessories"><span>Accessories</span></button>
+      <a href="#wishlist" data-close-drawer><span>My wishlist</span><b id="wishlistCount">0</b></a>
+      <a href="#cart" data-close-drawer><span>Shopping cart</span><b id="sideCartCount">0</b></a>
+      <a href="#preorder" data-close-drawer><span>Preorder</span></a>
+      <a href="index.html#deals"><span>Offers & deals</span></a>
+      <a href="index.html#contact"><span>Help & contact</span></a>
+    </nav>
+    <div class="captech-sidebar-bottom"><a href="index.html">About CapTech</a><a href="#" id="sideSignOut">Sign out</a></div>
+  </aside>
+
+  <main>
+    <section class="content-section deals-section" id="products">
+      <div class="section-inner">
+        <p class="section-kicker">CAPTECH STORE</p>
+        <h2 class="section-title">Shop Products</h2>
+        <p class="section-intro">Choose a category or search for a product. Add products to your cart to prepare your order.</p>
+
+        <div class="search" role="search">
+          <input class="srch" id="productSearch" type="search" placeholder="Search products..." aria-label="Search products">
+          <button class="btn3" id="searchButton" type="button">Search</button>
+        </div>
+        <div class="captech-shop-tools"><label for="productSort">Sort products</label><select id="productSort"><option value="default">Recommended</option><option value="az">Name: A to Z</option><option value="za">Name: Z to A</option></select><span class="captech-tool-hint">Tap ♡ on a product to save it.</span></div>
+        <div class="nav-links" aria-label="Product categories" style="margin:24px 0; flex-wrap:wrap;">
+          <button class="btn1 category-button" type="button" data-category="All">All</button>
+          <button class="btn1 category-button" type="button" data-category="Electronics">Electronics</button>
+          <button class="btn1 category-button" type="button" data-category="Clothes">Clothes</button>
+          <button class="btn1 category-button" type="button" data-category="Accessories">Accessories</button>
+        </div>
+
+        <p id="resultMessage" class="section-intro" aria-live="polite">Showing all products.</p>
+        <div class="deals-grid" id="productGrid">
+          <article class="deal-card product-card" data-name="Wireless earbuds" data-category="Electronics Accessories">
+            <img src="images (95).jpeg" alt="Wireless earbuds" width="180" height="130" loading="lazy">
+            <h3>Wireless Earbuds</h3><p>Compact wireless audio for everyday listening.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Wireless Earbuds">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Smartphone" data-category="Electronics">
+            <img src="download (27).jpeg" alt="Smartphone" width="180" height="130" loading="lazy">
+            <h3>Smartphone</h3><p>A mobile phone for communication and everyday tasks.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartphone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Laptop" data-category="Electronics">
+            <img src="images - 2026-11-01T203649.870.jpeg" alt="Laptop computer" width="180" height="130" loading="lazy">
+            <h3>Printer</h3><p>A portable computer for study, work and entertainment.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Laptop">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Running Shoes" data-category="Clothes">
+            <img src="images (22).jpeg" alt="Pair of running shoes" width="180" height="130" loading="lazy">
+            <h3>Mens Clothes</h3><p>Comfortable footwear for everyday activities.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Running Shoes">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Leather Belt" data-category="Accessories">
+            <img src="images (12).jpeg" alt="Leather belt" width="180" height="130" loading="lazy">
+            <h3>Leather Belt</h3><p>A simple belt accessory for everyday outfits.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Leather Belt">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Backpack" data-category="Clothes Accessories">
+            <img src="download (16).jpeg" alt="Backpack" width="180" height="130" loading="lazy">
+            <h3>Backpack</h3><p>A practical bag for carrying your daily essentials.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Backpack">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Headphones" data-category="Electronics Accessories">
+            <img src="images (88).jpeg" alt="Over-ear headphones" width="180" height="130" loading="lazy">
+            <h3>Headphones</h3><p>Over-ear headphones for personal audio.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Headphones">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Eyeglasses" data-category="Accessories">
+            <img src="images (52).jpeg" alt="Eyeglasses" width="180" height="130" loading="lazy">
+            <h3>Eyeglasses</h3><p>Classic-frame eyewear accessory.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Eyeglasses">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Wristwatch" data-category="Accessories">
+            <img src="download (19).jpeg" alt="Wristwatch" width="180" height="130" loading="lazy">
+            <h3>Belt</h3><p>Put on to keep a good reputation .</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Wristwatch">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Smartwatch" data-category="Electronics Accessories">
+            <img src="download (5).jpeg" alt="Smartwatch" width="180" height="130" loading="lazy">
+            <h3>Smartwatch</h3><p>A digital smartwatch with activity and notification features.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartwatch">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Classic Wristwatch" data-category="Accessories">
+            <img src="download (9).jpeg" alt="Classic Wristwatch" width="180" height="130" loading="lazy">
+            <h3>Classic Smartwatch</h3><p>A classic wristwatch design.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Classic Wristwatch">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Smartphone" data-category="Electronics">
+            <img src="images (27).jpeg" alt="Smartphone" width="180" height="130" loading="lazy">
+            <h3>Smartphone</h3><p>A smartphone for communication and everyday use.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartphone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Smartphone" data-category="Electronics">
+            <img src="images (3).jpeg" alt="Smartphone" width="180" height="130" loading="lazy">
+            <h3>women Footwear</h3><p>A modern women footwear.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartphone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Smartphone" data-category="Electronics">
+            <img src="images (2).jpeg" alt="Smartphone" width="180" height="130" loading="lazy">
+            <h3>Sneakers</h3><p>A sneakers for running .</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartphone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Smartphone" data-category="Electronics">
+            <img src="images (30).jpeg" alt="Smartphone" width="180" height="130" loading="lazy">
+            <h3>Smartphone</h3><p>A touchscreen mobile phone.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartphone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Smartphone" data-category="Electronics">
+            <img src="images (33).jpeg" alt="Smartphone" width="180" height="130" loading="lazy">
+            <h3>Smartphone</h3><p>A modern mobile phone.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartphone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Laptop Computer" data-category="Electronics">
+            <img src="images - 2026-11-01T203013.916.jpeg" alt="Laptop Computer" width="180" height="130" loading="lazy">
+            <h3>Laptop Computer</h3><p>A portable laptop computer.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Laptop Computer">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Laptop Computer" data-category="Electronics">
+            <img src="images - 2026-11-01T202348.808.jpeg" alt="Laptop Computer" width="180" height="130" loading="lazy">
+            <h3>Headset</h3><p>A portable headset for smartphones and computer.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Laptop Computer">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Desktop Computer" data-category="Electronics">
+            <img src="images - 2026-11-01T202704.011.jpeg" alt="Desktop Computer" width="180" height="130" loading="lazy">
+            <h3>Desktop Computer Headset</h3><p>A desktop computer headset and also portable.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Desktop Computer">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Wireless Earbuds" data-category="Electronics Accessories">
+            <img src="images (71).jpeg" alt="Wireless Earbuds" width="180" height="130" loading="lazy">
+            <h3>Wireless Earbuds</h3><p>Wireless in-ear audio earbuds.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Wireless Earbuds">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Wireless Earbuds" data-category="Electronics Accessories">
+            <img src="images (77).jpeg" alt="Wireless Earbuds" width="180" height="130" loading="lazy">
+            <h3>Wireless Earbuds</h3><p>A pair of wireless earbuds.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Wireless Earbuds">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Wireless Earbuds" data-category="Electronics Accessories">
+            <img src="images (84).jpeg" alt="Wireless Earbuds" width="180" height="130" loading="lazy">
+            <h3>Wired Earbuds</h3><p>Wired earbuds with a pin.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Wireless Earbuds">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Wireless Earbuds" data-category="Electronics Accessories">
+            <img src="images (98).jpeg" alt="Wireless Earbuds" width="180" height="130" loading="lazy">
+            <h3>Wireless Headset</h3><p>Compact wireless headphones.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Wireless Earbuds">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Over-Ear Headphones" data-category="Electronics Accessories">
+            <img src="images (89).jpeg" alt="Over-Ear Headphones" width="180" height="130" loading="lazy">
+            <h3>Over-Ear Headphones</h3><p>Wireless over-ear headphones.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Over-Ear Headphones">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Gaming Headset" data-category="Electronics Accessories">
+            <img src="images (36).jpeg" alt="Smartphone" width="180" height="130" loading="lazy">
+            <h3>Smartphone</h3><p>A smart with a high quality microphone and battery.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Smartphone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Kettle" data-category="Electronics Accessories">
+            <img src="images (49).jpeg" alt="Gaming Headset" width="180" height="130" loading="lazy">
+            <h3>Heater/kettle</h3><p>A heator designed for rising up the temperature of water.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Kettle">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Virtual Reality Headset" data-category="Electronics">
+            <img src="images (68).jpeg" alt="Virtual Reality Headset" width="180" height="130" loading="lazy">
+            <h3>Virtual Reality Headset</h3><p>A virtual reality headset.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Virtual Reality Headset">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Virtual Reality Headset" data-category="Electronics">
+            <img src="images (66).jpeg" alt="Virtual Reality Headset" width="180" height="130" loading="lazy">
+            <h3>Virtual Reality Headset</h3><p>A VR headset for immersive experiences.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Virtual Reality Headset">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Eyeglasses" data-category="Accessories">
+            <img src="download (30).jpeg" alt="Eyeglasses" width="180" height="130" loading="lazy">
+            <h3>Eyeglasses</h3><p>A pair of stylish eyeglasses.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Eyeglasses">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Sneakers" data-category="Accessories">
+            <img src="images (5).jpeg" alt="Eyeglasses" width="180" height="130" loading="lazy">
+            <h3>Sneakers</h3><p>sneakers for every day wear.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Sneakers">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Sunglasses" data-category="Accessories">
+            <img src="images (55).jpeg" alt="Sunglasses" width="180" height="130" loading="lazy">
+            <h3>Sunglasses</h3><p>Protective fashion sunglasses.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Sunglasses">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Sneakers" data-category="Clothes">
+            <img src="images (4).jpeg" alt="Sneakers" width="180" height="130" loading="lazy">
+            <h3>Sneakers</h3><p>Casual sneakers for everyday wear.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Sneakers">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Leather Shoes" data-category="Clothes">
+            <img src="images.jpg" alt="Leather Shoes" width="180" height="130" loading="lazy">
+            <h3>Leather Shoes</h3><p>A pair of formal leather shoes.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Leather Shoes">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Earbuds" data-category="Accessories">
+            <img src="images (79).jpeg" alt="Backpack" width="180" height="130" loading="lazy">
+            <h3>Earbuds</h3><p>A practical earbuds with pod.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Earbuds">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Women's Clothes" data-category="Accessories">
+            <img src="download (25).jpeg" alt="Handbag" width="180" height="130" loading="lazy">
+            <h3>Women's Clothing</h3><p>A women clothing for events use.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Women's Clothing">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Handbag" data-category="Accessories">
+            <img src="download (11).jpeg" alt="Handbag" width="180" height="130" loading="lazy">
+            <h3>Handbag</h3><p>A stylish carry handbag.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Handbag">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Leather Belt" data-category="Accessories">
+            <img src="images (9).jpeg" alt="Leather Belt" width="180" height="130" loading="lazy">
+            <h3>Leather Belt</h3><p>A classic belt with a buckle.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Leather Belt">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Printer" data-category="Electronics">
+            <img src="download (37).jpeg" alt="Printer" width="180" height="130" loading="lazy">
+            <h3>Printer</h3><p>A printer for home or office documents.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Printer">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Printer" data-category="Electronics">
+            <img src="download (6).jpeg" alt="Printer" width="180" height="130" loading="lazy">
+            <h3>Printer</h3><p>A compact office printer.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Printer">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Men's Clothing" data-category="Electronics">
+            <img src="download (23).jpeg" alt="Printer" width="180" height="130" loading="lazy">
+            <h3>Men's Clothing</h3><p>An everyday wear for men.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Men's Clothing">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Microwave Oven" data-category="Electronics">
+            <img src="images (50).jpeg" alt="Microwave Oven" width="180" height="130" loading="lazy">
+            <h3>Microwave Oven</h3><p>A microwave oven for kitchen use.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Microwave Oven">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Mobile Phone" data-category="Electronics">
+            <img src="images (41).jpeg" alt="Electric Kettle" width="180" height="130" loading="lazy">
+            <h3>Mobile Phone</h3><p>A mobile phone for making calls.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Mobile Phone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Earbuds" data-category="Electronics">
+            <img src="images (83).jpeg" alt="Earbuds" width="180" height="130" loading="lazy">
+            <h3>wired Earbuds</h3><p>A portable audio wired earbud.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Earbuds">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Ai Glasses" data-category="Electronics">
+            <img src="images (60).jpeg" alt="Computer Monitor" width="180" height="130" loading="lazy">
+            <h3>Ai Glasses</h3><p>A computer display monitor.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="glasses">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Nokia Feature Phone" data-category="Electronics">
+            <img src="images (46).jpeg" alt="Nokia Feature Phone" width="180" height="130" loading="lazy">
+            <h3>Nokia Feature Phone</h3><p>A keypad mobile phone.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Nokia Feature Phone">Add to Cart</button>
+          </article>
+          <article class="deal-card product-card" data-name="Keypad Mobile Phone" data-category="Electronics">
+            <img src="images (45).jpeg" alt="Keypad Mobile Phone" width="180" height="130" loading="lazy">
+            <h3>Keypad Mobile Phone</h3><p>A basic mobile phone with physical keys.</p>
+            <p><strong>Price:</strong> Contact for price</p>
+            <button class="btn" type="button" data-add="Keypad Mobile Phone">Add to Cart</button>
+          </article>
+        </div>
+        <p id="noProducts" class="section-intro" hidden>No products match your search.</p>
+      </div>
+    </section>
+
+    <section class="content-section deals-section" id="wishlist">
+      <div class="section-inner"><p class="section-kicker">YOUR SAVED FINDS</p><h2 class="section-title">My Wishlist</h2><p class="section-intro">Products you save with the heart button appear here. Your list stays on this browser.</p><div id="wishlistItems" class="deals-grid"><p class="section-intro">Your wishlist is empty.</p></div></div>
+    </section>
+
+    <section class="content-section about-section" id="cart">
+      <div class="section-inner">
+        <p class="section-kicker">YOUR SELECTION</p>
+        <h2 class="section-title">Shopping Cart</h2>
+        <p class="section-intro">Review the products you have selected.</p>
+        <ul id="cartItems" aria-live="polite"><li>Your cart is empty.</li></ul>
+        <p><strong>Items in cart: <span id="cartTotal">0</span></strong></p>
+        <button class="btn" id="clearCart" type="button">Clear Cart</button>
+        <button class="btn" id="placeOrder" type="button">Prepare Order</button>
+        <p id="cartMessage" class="section-intro" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section class="content-section deals-section" id="preorder">
+      <div class="section-inner captech-preorder-panel">
+        <p class="section-kicker">RESERVE YOUR ITEMS</p>
+        <h2 class="section-title">Preorder & Payment Request</h2>
+        <p class="section-intro">Submit your order details and preferred payment method. CapTech will confirm availability, final price and secure payment instructions before you pay.</p>
+        <form id="preorderForm" class="captech-preorder-form">
+          <label for="preorderName">Full name</label>
+          <input id="preorderName" name="name" autocomplete="name" required placeholder="Your full name">
+          <label for="preorderPhone">Phone number</label>
+          <input id="preorderPhone" name="phone" type="tel" autocomplete="tel" required placeholder="e.g. 024 000 0000">
+          <label for="preorderAddress">Delivery location / address</label>
+          <textarea id="preorderAddress" name="address" rows="3" required placeholder="Enter your delivery location"></textarea>
+          <label for="preorderPayment">Preferred payment method</label>
+          <select id="preorderPayment" name="payment" required>
+            <option value="">Choose a payment method</option>
+            <option value="Mobile Money (MTN MoMo / Telecel Cash / AT Money)">Mobile Money</option>
+            <option value="Bank transfer">Bank transfer</option>
+            <option value="Pay on delivery (if available)">Pay on delivery (if available)</option>
+          </select>
+          <label for="preorderNotes">Additional notes (optional)</label>
+          <textarea id="preorderNotes" name="notes" rows="2" placeholder="Size, colour or other details"></textarea>
+          <button class="btn" type="submit">Submit Preorder Request</button>
+          <p id="preorderFeedback" class="section-intro" role="status" aria-live="polite"></p>
+        </form>
+        <p class="captech-payment-safety">Payment is not taken on this page. Never share your PIN, OTP or card password. Wait for CapTech's confirmed order total and official payment instructions.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><h2>CapTech</h2><p>Shop Smart, Shop Easy.</p></div>
+      <div class="footer-links"><h3>Quick Links</h3><ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#deals">Deals</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+        <li><a href="#products">Shop</a></li>
+      </ul></div>
+      <p class="copyright">© <span id="year"></span> CapTech. All rights reserved. <br>call us on+233509648565</p>
+    </div>
+  </footer>
+
+  <script>
+    // Only a verified signed-in session can open the shop page.
+    const signedInEmail = sessionStorage.getItem("captech_signed_in");
+    if (!signedInEmail) window.location.replace("login.html");
+    (() => {
+      const cards = Array.from(document.querySelectorAll(".product-card"));
+      const grid = document.getElementById("productGrid");
+      const searchInput = document.getElementById("productSearch");
+      const resultMessage = document.getElementById("resultMessage");
+      const noProducts = document.getElementById("noProducts");
+      const cartItems = document.getElementById("cartItems");
+      const cartCount = document.getElementById("cartCount");
+      const cartTotal = document.getElementById("cartTotal");
+      const cartMessage = document.getElementById("cartMessage");
+      const wishlistItems = document.getElementById("wishlistItems");
+      const accountKey = (signedInEmail || 'guest').toLowerCase();
+      const cartKey = 'captech_cart_' + accountKey;
+      const wishKey = 'captech_wishlist_' + accountKey;
+      let activeCategory = "All";
+      let cart = JSON.parse(localStorage.getItem(cartKey) || '[]');
+      let wishlist = JSON.parse(localStorage.getItem(wishKey) || '[]');
+      const menu = document.getElementById('shopSidebar');
+      const backdrop = document.getElementById('drawerBackdrop');
+      const menuToggle = document.getElementById('menuToggle');
+      const closeMenu = () => { menu.classList.remove('is-open'); backdrop.classList.remove('is-visible'); menu.setAttribute('aria-hidden','true'); menuToggle.setAttribute('aria-expanded','false'); document.body.classList.remove('captech-menu-open'); };
+      const openMenu = () => { menu.classList.add('is-open'); backdrop.classList.add('is-visible'); menu.setAttribute('aria-hidden','false'); menuToggle.setAttribute('aria-expanded','true'); document.body.classList.add('captech-menu-open'); };
+      menuToggle.addEventListener('click', openMenu);
+      document.getElementById('menuClose').addEventListener('click', closeMenu);
+      backdrop.addEventListener('click', closeMenu);
+      document.querySelectorAll('[data-close-drawer]').forEach(link => link.addEventListener('click', closeMenu));
+      document.querySelectorAll('[data-side-category]').forEach(button => button.addEventListener('click', () => { activeCategory=button.dataset.sideCategory; filterProducts(); closeMenu(); document.getElementById('products').scrollIntoView({behavior:'smooth'}); }));
+      function saveLists(){ localStorage.setItem(cartKey, JSON.stringify(cart)); localStorage.setItem(wishKey, JSON.stringify(wishlist)); }
+      function filterProducts() {
+        const term = searchInput.value.trim().toLowerCase();
+        let visible = 0;
+        cards.forEach(card => {
+          const matchesName = (card.dataset.name + ' ' + card.textContent).toLowerCase().includes(term);
+          const categories = card.dataset.category.split(" ");
+          const matchesCategory = activeCategory === "All" || categories.includes(activeCategory);
+          const show = matchesName && matchesCategory;
+          card.hidden = !show;
+          if (show) visible++;
+        });
+        resultMessage.textContent = `Showing ${visible} product${visible === 1 ? "" : "s"}.`;
+        noProducts.hidden = visible !== 0;
+      }
+      function renderCart() {
+        cartItems.replaceChildren();
+        if (cart.length === 0) { const empty=document.createElement('li'); empty.textContent='Your cart is empty.'; cartItems.appendChild(empty); }
+        else cart.forEach((name,index)=>{ const item=document.createElement('li'); const label=document.createElement('span'); label.textContent=name+' '; const remove=document.createElement('button'); remove.type='button'; remove.className='btn'; remove.textContent='Remove'; remove.addEventListener('click',()=>{cart.splice(index,1);saveLists();renderCart();}); item.append(label,remove);cartItems.appendChild(item); });
+        cartCount.textContent=cart.length; cartTotal.textContent=cart.length; document.getElementById('sideCartCount').textContent=cart.length; saveLists();
+      }
+      function renderWishlist(){
+        wishlistItems.replaceChildren(); document.getElementById('wishlistCount').textContent=wishlist.length;
+        if(!wishlist.length){const empty=document.createElement('p');empty.className='section-intro';empty.textContent='Your wishlist is empty. Tap ♡ on any product to save it.';wishlistItems.appendChild(empty);}
+        wishlist.forEach(name=>{const card=cards.find(c=>c.dataset.name===name);if(!card)return;const clone=card.cloneNode(true);clone.querySelectorAll('button').forEach(b=>b.remove());const remove=document.createElement('button');remove.type='button';remove.className='btn';remove.textContent='Remove from Wishlist';remove.addEventListener('click',()=>{wishlist=wishlist.filter(x=>x!==name);syncHearts();renderWishlist();saveLists();});clone.appendChild(remove);wishlistItems.appendChild(clone);});
+        syncHearts(); saveLists();
+      }
+      function syncHearts(){cards.forEach(card=>{const b=card.querySelector('[data-wishlist]');if(b){const saved=wishlist.includes(card.dataset.name);b.textContent=saved?'♥ Saved':'♡ Save';b.setAttribute('aria-pressed',String(saved));}});}
+      cards.forEach(card=>{
+        const add=card.querySelector('[data-add]');
+        if(add){add.addEventListener('click',()=>{cart.push(card.dataset.name);saveLists();renderCart();cartMessage.textContent=card.dataset.name+' added to your cart.';});}
+        const heart=document.createElement('button');heart.type='button';heart.className='captech-wishlist-button';heart.dataset.wishlist='';heart.addEventListener('click',()=>{const name=card.dataset.name;if(wishlist.includes(name))wishlist=wishlist.filter(x=>x!==name);else wishlist.push(name);renderWishlist();});
+        const heading=card.querySelector('h3'); if(heading) heading.insertAdjacentElement('afterend',heart);
+      });
+      document.querySelectorAll('.category-button').forEach(button=>button.addEventListener('click',()=>{activeCategory=button.dataset.category;filterProducts();}));
+      document.getElementById('searchButton').addEventListener('click',filterProducts); searchInput.addEventListener('input',filterProducts);
+      document.getElementById('productSort').addEventListener('change',event=>{const mode=event.target.value;const sorted=[...cards];if(mode==='az')sorted.sort((a,b)=>a.dataset.name.localeCompare(b.dataset.name));if(mode==='za')sorted.sort((a,b)=>b.dataset.name.localeCompare(a.dataset.name));if(mode==='default')sorted.sort((a,b)=>cards.indexOf(a)-cards.indexOf(b));sorted.forEach(card=>grid.appendChild(card));filterProducts();});
+      document.getElementById('clearCart').addEventListener('click',()=>{cart=[];saveLists();renderCart();cartMessage.textContent='Your cart has been cleared.';});
+      document.getElementById('placeOrder').addEventListener('click',()=>{if(!cart.length){cartMessage.textContent='Add at least one product before preparing an order.';return;}const order=cart.map((name,index)=>`${index+1}. ${name}`).join('\n');const subject=encodeURIComponent('CapTech product enquiry');const body=encodeURIComponent('Hello CapTech, I would like to enquire about these products:\n\n'+order+'\n\nAccount: '+(signedInEmail||'')+'\nPlease provide availability and prices.');cartMessage.textContent='Your email app will open with your order enquiry. Review it and send it to CapTech.';window.location.href='mailto:dansostephen44543@gmail.com?subject='+subject+'&body='+body;});
+      document.getElementById('preorderForm').addEventListener('submit', function(event){
+        event.preventDefault();
+        if(!cart.length){document.getElementById('preorderFeedback').textContent='Please add at least one product to your cart before submitting a preorder.';return;}
+        if(!this.reportValidity()) return;
+        const details={
+          orderId:'CT-'+Date.now(), account:signedInEmail||'',
+          customer:document.getElementById('preorderName').value.trim(),
+          phone:document.getElementById('preorderPhone').value.trim(),
+          address:document.getElementById('preorderAddress').value.trim(),
+          payment:document.getElementById('preorderPayment').value,
+          notes:document.getElementById('preorderNotes').value.trim(),
+          items:[...cart], status:'Awaiting CapTech confirmation',
+          createdAt:new Date().toISOString()
+        };
+        const ordersKey='captech_preorders_'+accountKey;
+        const previous=JSON.parse(localStorage.getItem(ordersKey)||'[]');
+        previous.push(details); localStorage.setItem(ordersKey,JSON.stringify(previous));
+        const body=[
+          'NEW CAPTECH PREORDER REQUEST','Order reference: '+details.orderId,
+          'Customer: '+details.customer,'Account email: '+details.account,
+          'Phone: '+details.phone,'Delivery location: '+details.address,
+          'Preferred payment: '+details.payment,'Items: '+details.items.join(', '),
+          'Additional notes: '+(details.notes||'None'),'',
+          'Please confirm availability, total price, delivery cost and official payment instructions.',
+          'Status: Awaiting CapTech confirmation. No payment has been collected.'
+        ].join('\\n');
+        document.getElementById('preorderFeedback').textContent='Preorder saved on this device as '+details.orderId+'. Your email app will open so you can send it to CapTech. The order is pending confirmation; no payment has been taken.';
+        window.location.href='mailto:dansostephen44543@gmail.com?subject='+encodeURIComponent('CapTech preorder '+details.orderId)+'&body='+encodeURIComponent(body);
+      });
+      function signOut(event){event.preventDefault();sessionStorage.removeItem('captech_signed_in');window.location.replace('login.html');}
+      document.getElementById('signOutLink').addEventListener('click',signOut);document.getElementById('sideSignOut').addEventListener('click',signOut);
+      document.getElementById('sidebarUser').textContent=signedInEmail || 'Your shopping space';
+      // Daily countdown resets at midnight on the visitor's device.
+      function updateCountdown(){const now=new Date();const end=new Date(now);end.setHours(24,0,0,0);let seconds=Math.max(0,Math.floor((end-now)/1000));const h=String(Math.floor(seconds/3600)).padStart(2,'0');const m=String(Math.floor(seconds%3600/60)).padStart(2,'0');const sec=String(seconds%60).padStart(2,'0');document.getElementById('dealCountdown').textContent=`${h}:${m}:${sec}`;}
+      updateCountdown();setInterval(updateCountdown,1000);
+      document.getElementById('year').textContent=new Date().getFullYear();filterProducts();renderCart();renderWishlist();
+    })();
+  </script>
+</body>
+</html>
